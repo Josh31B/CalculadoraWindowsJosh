@@ -150,7 +150,8 @@ namespace CalculadoraWindowsJosh
 
         private void btnPorcentagem(object sender, EventArgs e)
         {
-
+            btnResultado1.Text = (double.Parse(btnResultado1.Text)/100).ToString();
+            vaiMudar = true;
         }
         private void btn(object sender, EventArgs e)
         {
@@ -170,7 +171,7 @@ namespace CalculadoraWindowsJosh
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            btnResultado1.Text = btnResultado1.Text.Substring(0, btnResultado1.Text.Length -1);
+            btnResultado1.Text = btnResultado1.Text.Substring (btnResultado1.Text.Length -1);
         }
 
         private void btnVirgula_Click(object sender, EventArgs e)
@@ -206,10 +207,9 @@ namespace CalculadoraWindowsJosh
 
         private void button14_Click(object sender, EventArgs e)
         {
-            string aux = btnResultado1.Text;
-            btnResultado1.Text = Evaluate(lblConta.Text + btnResultado1.Text).ToString();
-            lblConta.Text += aux + "yroot";
+            btnResultado1.Text = Math.Sqrt(double.Parse(btnResultado1.Text)*2).ToString();
             vaiMudar = true;
+            
         }
 
         private void button12_Click_1(object sender, EventArgs e)
